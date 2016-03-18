@@ -45,7 +45,7 @@ minimize MinimizeCost:sum{e in link_nos} link_cost[e]*y[e];
 #Constraints
 ####################################################################
 subj to all_demands {d in demand_nos,p in route_nos}:
-    x[d,p] = h[d]*u[d,p];
+    x[d,p] = 3*h[d]*u[d,p];
 
 subj to capacity_constraints {e in link_nos}:
     sum{d in demand_nos} ( sum{p in route_nos} (delta[e,d,p]*x[d,p]))
