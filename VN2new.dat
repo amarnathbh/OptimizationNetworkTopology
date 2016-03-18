@@ -1,0 +1,63 @@
+data;
+param S=3; 
+param C=3 ;
+param V=6;  # virtual nodes
+param L=12; #Virtual links
+param D = 9; #demand
+param El=2; # Endpoints of virtual link
+param Z=3; # set of virtual link pairs
+param E=8 ; # Edges in the pgysical network
+param N=6 ; #Nodes in the physical network
+#param Pl > 0 integer; #set of physical edges on which virtual link is mapped
+param R=3; # DC connection node pair
+
+
+
+
+ param:             v_src   v_dest  lambda  theta t  :=   #for virtual link
+     1                4      6       2      3     1  
+     2                5      6       2      3     1	
+     3                4      5       2      3     1 
+     4                3      6       2      3     1		
+     5                3      5       2      3     1	
+     6                2      5       2      3     1	
+     7                2      6       2      3     1	
+     8                3      4       2      3     1 
+     9                2      4       2      3     1 
+     10               1      4       2      3     1 
+     11               1      5       2      3     1 
+     12               1      6       2      3     1    ;     
+      
+     
+     
+param:     src  dest   b    n   r     z        :=  #for demand d(s,c)
+  1         1    4     5   2    1     3
+  2         2    4     5   2    1     3
+  3         3    4     5   2    1     3
+  4         1    5     5   2    1     3
+  5         2    5     5   2    1     3
+  6         3    5     5   2    1     3
+  7         1    6     5   2    1     3
+  8         2    6     5   2    1     3
+  9         3    6     5   2    1     3    ;    
+   
+     
+  
+  param: mu   eta   := #for virtual nodes
+     1   4    6
+     2   4    6
+     3   4    6 
+     4   4    6
+     5   4    6
+     6   4    6    ;
+     
+     
+     param:  phi  psi  := 
+       1      7   8
+       2      7   8
+       3      7   8;
+       
+
+ end;
+       
+       
